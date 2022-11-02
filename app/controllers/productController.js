@@ -100,8 +100,7 @@ exports.create = (req, res) => {
   });
 
   //save product to database
-  product
-    .save(product)
+  product.save(product)
     .then (data => {
       res.send(data);
     }).catch (err => {
@@ -140,7 +139,8 @@ exports.findOne = (req, res) => {
   }).catch(err => {
     res.status(500).send({
       message:
-        err.message || "Error retrieving product with id" + id});
+        err.message || "Error retrieving product with id" + id
+      });
   });
 };
 

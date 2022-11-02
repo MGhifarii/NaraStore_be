@@ -1,8 +1,7 @@
 
-module.exports = app => {
+module.exports = (app) => {
     const products = require("../controllers/productController.js");
-
-    var router = require("express").Router();
+    const router = require("express").Router();
 
     router.post("/", products.create);
     router.get("/", products.findAll);

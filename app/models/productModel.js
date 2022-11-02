@@ -1,5 +1,5 @@
 module.exports = mongoose => {
-  var schema = mongoose.Schema(
+  const schema = mongoose.Schema(
     {
       name: String,
       description: String,
@@ -15,7 +15,7 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Product = mongoose.model("Product", schema);
+  const Product = mongoose.model("product", schema);
   return Product;
 };
 

@@ -9,4 +9,4 @@ RUN npm install --silent
 COPY . ./
 
 EXPOSE 3000
-CMD ["nodemon","index.js"]
+CMD ["node","index.js"]
