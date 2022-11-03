@@ -100,6 +100,7 @@ exports.create = (req, res) => {
   });
 
   //save product to database
+
   product.save(product)
     .then (data => {
       res.send(data);

@@ -43,7 +43,7 @@ mongoose.connect(
 
 // set up routes
 app.use("/api/v1/users", require("./app/routers/userRouter.js"));
-app.use("/api/v1/products", require("./app/routers/productRouter.js"));
+// app.use("/api/v1/products", require("./app/routers/productRouter.js"));
 // app.use("/api/v1/admins", require("./app/routers/adminRouter.js"));
 
 //Upload File
