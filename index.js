@@ -14,6 +14,7 @@ dotenv.config();
 // set up express
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // port listener
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
@@ -51,9 +52,9 @@ app.use("/api/v1/users", require("./app/routers/userRouter.js"));
 // app.use(productRouter);
  
 //simple route
-app.get("/", (req, res) => {
-  res.json({message:"Welcome to NaraStore"});
-});
+// app.get("/", (req, res) => {
+//   res.json({message:"Welcome to NaraStore"});
+// });
 
 require("./app/routers/productRouter")(app);
 

@@ -85,11 +85,12 @@ const Product = db.products;
 
 exports.create = (req, res) => {
   //validate request
-  // if (!req.body.name) {
-  //   res.status(400).send({ message: " content can not be empty!"});
-  //   return;
-  // }
+  if (!req.body.name) {
+    res.status(400).send({ message: " content can not be empty!"});
+    return;
+  }
 
+  console.log(req.body)
 
   //create a product
   const product = new Product({

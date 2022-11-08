@@ -1,13 +1,22 @@
 module.exports = mongoose => {
   const schema = mongoose.Schema(
     {
-      name: String,
-      description: String,
-      prize: String,
-      published: Boolean
+      name: {
+        type: String,
+        required: [true, "Please add a name"],
+      },
+      description: {
+        type: String,
+        required: [true, "Please add an email"],
+      },
+      prize: {
+        type: Number,
+        required: [true, "Please add a password"],
+      },
     },
-    { timestamps: true }
-  );
+    {
+      timestamps: true,
+    });
 
   schema.method("toJSON", function() {
     const { __v, _id, ...object } = this.toObject();
