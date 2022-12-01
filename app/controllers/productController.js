@@ -83,6 +83,7 @@ exports.deleteProduct = asyncHandler(async (req, res) => {
 const db = require("../models");
 const Product = db.products;
 
+
 exports.create = (req, res) => {
   //validate request
   if (!req.body.name) {
@@ -154,8 +155,7 @@ exports.update = (req, res) => {
   }
 
   const id = req.params.id;
-
-  Product.findByIdAndUpdate(id, req.body, { useFindandModify: false})
+  Product.findByIdAndUpdate({_id:id }, {$set: req.body})
   .then(data => {
     if(!data){
       res.status(404).send({
@@ -163,6 +163,7 @@ exports.update = (req, res) => {
       })
     }else res.send({message: "product was updated successfully"});
   }).catch(err => {
+    console.log(err)
     res.status(500).send({
       message: "error updating product with id=" + id
     });
